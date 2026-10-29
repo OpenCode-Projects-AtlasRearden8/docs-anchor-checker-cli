@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docs-anchor-checker"
+version = "1.0.0"
+description = "Lint a markdown docs site before publishing: anchors, links, alt text, headings, front matter, orphans."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+keywords = ["markdown", "docs", "lint", "anchors", "cli"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Documentation",
+  "Topic :: Text Processing :: Markup :: Markdown",
+]
+authors = [{ name = "Asdale Dynamics, LLC" }]
+
+[project.scripts]
+docs-anchor-checker = "docs_anchor_checker.cli:main"
+
+[tool.setuptools]
+packages = ["docs_anchor_checker"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
